@@ -1,7 +1,8 @@
+// src/pages/AllCountriesPage.jsx
 import { useEffect, useState } from "react";
 import { CountryCard } from "../components/CountryCard";
 
-export default function Home() {
+export const AllCountriesPage = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -17,4 +18,6 @@ export default function Home() {
       ))}
     </div>
   );
-}
+};
+
+export default AllCountriesPage;

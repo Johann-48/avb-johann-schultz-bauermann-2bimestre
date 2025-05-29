@@ -1,23 +1,23 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Advice from "./pages/Advice";
+import CountryDetails from "./pages/CountryDetails";
+import CountryCard from "../components/CountryCard";
+import { FavoritesProvider } from "./context/FavoritesContext";
+import './index.css';
 
 function App() {
   return (
-    <Router>
-      <nav className="p-4 bg-gray-100">
-        <Link to="/" className="mr-4">
-          Home
-        </Link>
-        <Link to="/advice">Advice</Link>
-      </nav>
-      <div className="p-6">
+    <FavoritesProvider>
+      <Router>
+        <nav className="p-4 bg-gray-100">
+          <Link to="/" className="mr-4">Home</Link>
+        </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/advice" element={<Advice />} />
+          <Route path="/country/:code" element={<CountryDetails />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </FavoritesProvider>
   );
 }
 

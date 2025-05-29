@@ -1,22 +1,17 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import Detalhes from "../pages/Detalhes";
-import Advice from "../pages/Advice";
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AllCountriesPage } from "./pages/AllCountriesPage";
+import { FavoritesPage } from "./pages/FavoritesPage";
 
-export default function AppRoutes() {
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Link to="/">Home</Link>
-        <Link to="/detalhes">Detalhes</Link>
-        <Link to="/advice">Conselhos</Link>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/detalhes/:id" element={<Detalhes />} />
-          <Route path="/advice" element={<Advice />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AllCountriesPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
