@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { CountryCard } from "../components/CountryCard";
+import CountryCard from "../../components/CountryCard";
+import { Link } from "react-router-dom";
+
+<Link to="/favorites" className="text-blue-500 underline">
+  Ver Favoritos
+</Link>
+
 
 export default function Home() {
   const [countries, setCountries] = useState([]);
