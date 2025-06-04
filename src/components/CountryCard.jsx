@@ -25,7 +25,9 @@ export default function CountryCard({ country }) {
       </Link>
       <button
         onClick={toggleFavorite}
-        className={`px-4 py-1 rounded ${isFav ? "bg-red-400" : "bg-blue-400"} text-white`}
+        className={`px-4 py-1 rounded ${
+          isFav ? "bg-red-400" : "bg-blue-400"
+        } text-white`}
       >
         {isFav ? "Remover dos Favoritos" : "Favoritar"}
       </button>
