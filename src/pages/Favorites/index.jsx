@@ -6,13 +6,16 @@ export default function Favorites() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Países Favoritos</h1>
+      <h1 className="text-2xl font-bold mb-6">Países Favoritos</h1>
+
       {favorites.length === 0 ? (
         <p>Nenhum país favoritado ainda.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="flex flex-wrap gap-6">
           {favorites.map((country) => (
-            <CountryCard key={country.cca3} country={country} />
+            <div key={country.cca3} className="w-64">
+              <CountryCard country={country} />
+            </div>
           ))}
         </div>
       )}

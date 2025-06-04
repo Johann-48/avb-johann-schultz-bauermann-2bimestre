@@ -12,10 +12,15 @@ export default function Home() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Lista de Países</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <h1 className="text-2xl font-bold mb-6">Lista de Países</h1>
+
+      {/* Flex container with wrapping: */}
+      <div className="flex flex-wrap gap-6">
         {countries.map((country) => (
-          <CountryCard key={country.cca3} country={country} />
+          // Wrap each CountryCard in a fixed-width container
+          <div key={country.cca3} className="w-64">
+            <CountryCard country={country} />
+          </div>
         ))}
       </div>
     </div>
